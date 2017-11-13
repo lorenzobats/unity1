@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4274433172602820}
   - component: {fileID: 54657158761235764}
   - component: {fileID: 136302088451439896}
-  - component: {fileID: 114070572927255868}
   - component: {fileID: 114508740613742188}
-  - component: {fileID: 114414763492893828}
+  - component: {fileID: 114643158400541674}
+  - component: {fileID: 114439643835698492}
   m_Layer: 0
   m_Name: Asteroid 1
   m_TagString: Untagged
@@ -129,7 +129,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114070572927255868
+--- !u!114 &114439643835698492
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -137,22 +137,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1359862138668718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ff3f2532eda2544aa3211de11b0b6d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 1084ce087608c65439623a4012761ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tumble: 5
---- !u!114 &114414763492893828
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1359862138668718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5f2e52fb8e65a240b024a46e97e827d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: -5
 --- !u!114 &114508740613742188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -166,7 +153,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
   playerExplosion: {fileID: 100008, guid: a93496017806b7740910df5fd946f306, type: 2}
-  scoreValue: 10
+--- !u!114 &114643158400541674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1359862138668718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d8868ef6565734187ae2aa9c84b71d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136302088451439896
 CapsuleCollider:
   m_ObjectHideFlags: 1

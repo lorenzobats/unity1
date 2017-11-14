@@ -14,7 +14,7 @@ public class DestroyByContact : MonoBehaviour
 
 	void Start ()
 	{
-		scoreValue = 10;
+		
 
 		GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
 		if (gameControllerObject != null)
@@ -32,21 +32,26 @@ public class DestroyByContact : MonoBehaviour
 
 	void OnTriggerEnter(Collider other) 
 	{
-		if (other.tag == "Boundary")
+		if (other.tag == "Boundary" || other.tag == "Enememy")
 		{
 			return;
 		}
 
-		Instantiate(explosion, transform.position, transform.rotation);
+		scoreValue = 10;
 
+		if (explosion != null) 
+		{
+
+			Instantiate (explosion, transform.position, transform.rotation);
+		}
 
 		if (other.tag == "Player")
 		{
-			Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
-			scoreValue -= 10;
-			gameController.GameOver ();
 
 
+				Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
+				scoreValue -= 10;
+				gameController.GameOver ();
 
 		}
 		gameController.AddScore (scoreValue);

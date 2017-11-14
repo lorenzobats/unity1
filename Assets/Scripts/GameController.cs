@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-	public GameObject hazard;
+	public GameObject[] hazards;
 	public Vector3 spawnValues;
 	public int hazardCount;
 	public float spawnWait;
@@ -68,7 +68,7 @@ public class GameController : MonoBehaviour
 		{
 			targetScore += 100;
 			hazardCount += 5;
-			waveWait += 0.5f;
+			waveWait += 0.37f;
 			StartCoroutine (ShowMessage (newWave.text, timeToShow = 3));
 			Debug.Log ("hazard Increased");
 		}
@@ -107,6 +107,7 @@ public class GameController : MonoBehaviour
 		{
 			for (int i = 0; i < hazardCount; i++)
 			{
+				GameObject hazard = hazards [Random.Range (0, hazards.Length)];
 				Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
 				Quaternion spawnRotation = Quaternion.identity;
 				Instantiate (hazard, spawnPosition, spawnRotation);
@@ -131,7 +132,7 @@ public class GameController : MonoBehaviour
 
 	void UpdateScore ()
 	{
-		scoreText.text = "Score: " + score;
+		scoreText.text = "Score:" + score;
 	}
 		
 		

@@ -5,10 +5,8 @@ using UnityEngine;
 public class MoverAsteroid : MonoBehaviour
 {
 
-
-
 	void Start ()
 	{
-		GetComponent<Rigidbody> ().velocity = transform.forward * Random.Range(-4, -8);
+		GetComponent<Rigidbody> ().velocity = transform.forward * Random.Range(-5, -8);
 	}
 }

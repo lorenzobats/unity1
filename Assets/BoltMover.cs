@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Mover : MonoBehaviour 
+public class BoltMover : MonoBehaviour 
 {
-	public float speed;
+	public int boltSpeed;
 
 	private Rigidbody rb;
 
 	void Start()
 	{
 		rb = GetComponent<Rigidbody> ();
-		rb.velocity = transform.forward * speed;
+		rb.velocity = transform.forward * boltSpeed;
 	}
+
+
 }

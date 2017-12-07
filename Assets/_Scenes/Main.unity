@@ -239,6 +239,58 @@ GUIText:
     rgba: 4279222074
   m_PixelCorrect: 1
   m_RichText: 1
+--- !u!1 &168710621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 168710622}
+  - component: {fileID: 168710623}
+  m_Layer: 0
+  m_Name: WeaponUpgrade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &168710622
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 168710621}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0.14, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1921769700}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!132 &168710623
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 168710621}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: 
+  m_Anchor: 4
+  m_Alignment: 1
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 2
+  m_TabSize: 4
+  m_Font: {fileID: 12800000, guid: 73de982b501795c429ebfe4848ed83b4, type: 3}
+  m_Material: {fileID: 0}
+  m_FontSize: 25
+  m_FontStyle: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4291169791
+  m_PixelCorrect: 1
+  m_RichText: 1
 --- !u!1 &353123756
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,7 +1182,7 @@ MonoBehaviour:
     zMax: 8
   shot: {fileID: 1386188445265390, guid: bc3c201a5cb690548a7706a6b1c61ca2, type: 2}
   shotSpawn: {fileID: 1054038722}
-  fireRate: 0.25
+  fireRate: -0.7
 --- !u!82 &1567816758
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1390,6 +1442,7 @@ Transform:
   - {fileID: 107500588}
   - {fileID: 988288532}
   - {fileID: 511963621}
+  - {fileID: 168710622}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1421,6 +1474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e74b7e3de159aa4bb76f40adf83766d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   hazards:
   - {fileID: 1764275560634810, guid: cd4729378d6233844bd5ffd1d3230f57, type: 2}
   - {fileID: 1986611542784872, guid: b87c5438ba0c57c4aabe35dd0b1ae7d2, type: 2}
@@ -1437,6 +1491,7 @@ MonoBehaviour:
   newWave: {fileID: 107500589}
   waveCount: {fileID: 988288533}
   totalScore: {fileID: 511963622}
+  weaponUpgrade: {fileID: 168710623}
   score: 20
   endScore: 0
   totalScoreCount: 0

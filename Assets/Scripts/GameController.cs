@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+	public PlayerController player;
 	public GameObject[] hazards;
 	public Vector3 spawnValues;
 	public int hazardCount;
@@ -17,6 +18,7 @@ public class GameController : MonoBehaviour
 	public GUIText newWave;
 	public GUIText waveCount;
 	public GUIText totalScore;
+	public GUIText weaponUpgrade;
 
 	private bool gameOver;
 	private bool restart;
@@ -33,6 +35,16 @@ public class GameController : MonoBehaviour
 
 	void Start ()
 	{
+		GameObject playerObject = GameObject.FindWithTag ("Player");
+		if (playerObject != null) 
+		{
+			player = playerObject.GetComponent<PlayerController> ();
+		}
+		if (player == null) 
+		{
+			Debug.Log ("Cannot finde PlayerController Script");
+		}
+
 
 		gameOver = false;
 		restart = false;
@@ -42,7 +54,6 @@ public class GameController : MonoBehaviour
 		gameOverTime = 7;
 		endScore = 0;
 		totalScoreCount = 0f;
-
 
 
 	}
@@ -70,18 +81,23 @@ public class GameController : MonoBehaviour
 		{
 			targetScore += 100;
 			hazardCount += 5;
-			waveWait += 0.36f;
+			waveWait += 0.37f;
 			StartCoroutine (ShowMessage (newWave.text, timeToShow = 3));
 			Debug.Log ("hazard Increased");
+			player.fireRate += 0.06f;
+
 		}
 
 
 
 
+				
 	}
+
 	IEnumerator ShowMessage(string message, float timeToShow = 3)
 	{
-		
+		weaponUpgrade.text = "Weapons Upgraded!";
+
 		newWave.text = "Hazards increased!";
 
 		timeShown = 0f;
@@ -92,12 +108,17 @@ public class GameController : MonoBehaviour
 			yield return null;
 		}
 
+		weaponUpgrade.text = "";
 		newWave.text = "";
 
 
 
 
 	}
+
+
+
+
 
 
 	IEnumerator SpawnWaves ()

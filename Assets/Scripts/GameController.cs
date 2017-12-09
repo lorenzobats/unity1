@@ -54,6 +54,7 @@ public class GameController : MonoBehaviour
 		gameOverTime = 7;
 		endScore = 0;
 		totalScoreCount = 0f;
+		player.fireRate = -0.7f;
 
 
 	}
@@ -84,8 +85,14 @@ public class GameController : MonoBehaviour
 			waveWait += 0.37f;
 			StartCoroutine (ShowMessage (newWave.text, timeToShow = 3));
 			Debug.Log ("hazard Increased");
-			player.fireRate += 0.06f;
-
+			if (player.fireRate < -0.22f) 
+			{
+				player.fireRate += 0.06f;
+			} 
+			else 
+			{
+				player.fireRate += 0;
+			}
 		}
 
 
@@ -110,8 +117,6 @@ public class GameController : MonoBehaviour
 
 		weaponUpgrade.text = "";
 		newWave.text = "";
-
-
 
 
 	}
